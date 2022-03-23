@@ -1,7 +1,8 @@
-import "./app.css";
+import "./app.module.css";
+import Doogle from "./components/doogle/doogle";
 
 function App() {
-  return <h1>hello</h1>;
+  return <Doogle />;
 }
 
 export default App;
