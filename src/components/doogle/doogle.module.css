@@ -1,0 +1,25 @@
+.doogle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  width: 17rem;
+}
+.search {
+  padding-top: 1em;
+}
+.searchBar {
+  width: 30em;
+  padding: 0.7em;
+  margin: 0.7em;
+  font-size: 1.1em;
+  outline: none;
+  border-radius: 25px;
+  border: #e3e3e4 1px solid;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
