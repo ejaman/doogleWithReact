@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import ListBtn from "../listBtn/listBtn";
+import ShowLists from "../showLists/showLists";
 import styles from "./doogle.module.css";
 
 const Doogle = (props) => {
-  const [lines, setLines] = useState([
+  const [lists, setLists] = useState([
     {
       id: 1,
       sort: "🌼",
       name: "브룬펠시아",
       type: "가지과",
       eng: "Brunfelsia species",
-      fileURL: "doogle.png",
+      fileURL: null,
     },
     {
       id: 2,
@@ -18,7 +19,7 @@ const Doogle = (props) => {
       name: "데이지",
       type: "국화과",
       eng: "Chrysanthemum species",
-      fileURL: "doogle.png",
+      fileURL: null,
     },
     {
       id: 3,
@@ -26,7 +27,7 @@ const Doogle = (props) => {
       name: "염자",
       type: "다육식물",
       eng: "Crassula arborescens",
-      fileURL: "doogle.png",
+      fileURL: null,
     },
   ]);
 
@@ -39,6 +40,9 @@ const Doogle = (props) => {
         <input className={styles.searchBar} type="text" placeholder="검색" />
       </form>
       <ListBtn />
+      <div className={styles.showlist}>
+        <ShowLists lists={lists} />
+      </div>
     </section>
   );
 };
