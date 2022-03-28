@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddList from "../addList/addList";
 import ListBtn from "../listBtn/listBtn";
 import ShowLists from "../showLists/showLists";
 import styles from "./doogle.module.css";
@@ -40,6 +41,7 @@ const Doogle = (props) => {
         <input className={styles.searchBar} type="text" placeholder="검색" />
       </form>
       <ListBtn />
+      <AddList />
       <div className={styles.showlist}>
         <ShowLists lists={lists} />
       </div>

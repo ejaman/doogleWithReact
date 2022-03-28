@@ -4,32 +4,40 @@ import styles from "./addList.module.css";
 const AddList = (props) => {
   return (
     <form className={styles.form}>
-      <h1>add list</h1>
+      <span>
+        <img className={styles.logo} src="./images/doogle.png" alt="logo"></img>
+        <p className={styles.title}> 리스트를 추가해주세요.</p>
+      </span>
+
+      <p className={styles.p}>카테고리</p>
       <select className={styles.sort} name="theme">
         <option value="Plant">🌳 plant</option>
         <option value="Flower">🌼 flower</option>
         <option value="Food">🍭 food</option>
       </select>
+      <p className={styles.p}>이름</p>
       <input
         // ref={nameRef}
         className={styles.input}
         type="text"
         name="name"
-        placeholder="name"
+        placeholder="Name"
       ></input>
-      <input
-        // ref={typeRef}
-        className={styles.input}
-        type="text"
-        name="type"
-        placeholder="type"
-      ></input>
+      <p className={styles.p}>영문</p>
       <input
         // ref={engRef}
         className={styles.input}
         type="text"
         name="eng"
-        placeholder="eng"
+        placeholder="Eng"
+      ></input>
+      <p className={styles.p}>종/특징</p>
+      <input
+        // ref={typeRef}
+        className={styles.input}
+        type="text"
+        name="type"
+        placeholder="Type / Feature"
       ></input>
     </form>
   );
