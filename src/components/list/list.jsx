@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./list.module.css";
 
-const DEFAULT_IMG = "/images/default.png";
+const DEFAULT_IMG = "/images/defaultPlant.png";
 const List = ({ list }) => {
   const { name, sort, type, eng, fileURL } = list;
   const url = fileURL || DEFAULT_IMG;
@@ -9,13 +9,30 @@ const List = ({ list }) => {
   return (
     <li className={`${styles.list} ${getSort(sort)}`}>
       <div className={styles.td}>
-        <img className={styles.img} src={url} alt="img"></img>
-      </div>
-      <div className={styles.container}>
-        <input className={styles.input} type="text" name="sort" value={sort} />
-        <input className={styles.input} type="text" name="name" value={name} />
-        <input className={styles.input} type="text" name="type" value={type} />
-        <input className={styles.input} type="text" name="eng" value={eng} />
+        <div className={styles.image}>
+          <img className={styles.img} src={url} alt="img"></img>
+        </div>
+        <div className={styles.container}>
+          <input
+            className={styles.input}
+            type="text"
+            name="sort"
+            value={sort}
+          />
+          <input
+            className={styles.input}
+            type="text"
+            name="name"
+            value={name}
+          />
+          <input className={styles.input} type="text" name="eng" value={eng} />
+          <input
+            className={styles.input}
+            type="text"
+            name="type"
+            value={type}
+          />
+        </div>
       </div>
     </li>
   );

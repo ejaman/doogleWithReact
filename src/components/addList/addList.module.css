@@ -1,4 +1,5 @@
 .form {
+  background-color: white;
   border: 2px solid#e3e3e4;
   border-radius: 10px;
   padding: 1em 2em;
@@ -13,8 +14,6 @@
 .title {
   font-size: 1.2em;
   font-weight: 500;
-  /* padding-bottom: 1em;
-  border-bottom: 2px solid#e3e3e4; */
 }
 .sort,
 .input {
@@ -30,5 +29,23 @@
 }
 .p {
   color: #474747;
+  font-size: 0.9em;
   font-weight: 400;
+}
+.btnArea {
+  margin: 2em 0;
+}
+.btns {
+  border: none;
+  border-radius: 10px;
+  background-color: #5691f1;
+  color: white;
+  font-weight: bold;
+  width: 49%;
+  margin: 0.1em;
+  font-size: 1em;
+  padding: 0.6em;
+}
+.btns:hover {
+  opacity: 0.9;
 }

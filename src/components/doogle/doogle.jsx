@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import AddList from "../addList/addList";
+import List from "../list/list";
 import ListBtn from "../listBtn/listBtn";
 import ShowLists from "../showLists/showLists";
 import styles from "./doogle.module.css";
 
 const Doogle = (props) => {
+  const [open, setOpen] = useState(false);
   const [lists, setLists] = useState([
     {
       id: 1,
@@ -32,18 +34,52 @@ const Doogle = (props) => {
     },
   ]);
 
+  const onClickOpen = (event) => {
+    setOpen((prevStatus) => (prevStatus ? false : true));
+  };
+
   return (
     <section className={styles.doogle}>
       <a href="https://github.com/ejaman/doogleWithReact">
         <img className={styles.logo} src="./images/doogle.png" alt="logo"></img>
       </a>
+      {/* 검색 부분 */}
       <form className={styles.search}>
         <input className={styles.searchBar} type="text" placeholder="검색" />
       </form>
-      <ListBtn />
-      <AddList />
+
+      {/* 버튼 부분 */}
+      <div className={styles.btns}>
+        <div className={styles.btnSection}>
+          <button className={styles.showBtn}>⚠️</button>
+          <p>All</p>
+        </div>
+        <div className={styles.btnSection}>
+          <button className={styles.plantBtn}>🌳</button>
+          <p>Plants</p>
+        </div>
+        <div className={styles.btnSection}>
+          <button className={styles.foodBtn}>🍭</button>
+          <p>Foods</p>
+        </div>
+        <div className={styles.btnSection}>
+          <button className={styles.addBtn} onClick={onClickOpen}>
+            ➕
+          </button>
+          <p>Add</p>
+        </div>
+      </div>
+
+      {/* 리스트 추가 */}
+      {open ? (
+        <div className={styles.addlist}>
+          <AddList />
+        </div>
+      ) : null}
+
+      {/* 리스트 또는 검색 결과가 보여지는 부분 */}
       <div className={styles.showlist}>
-        <ShowLists lists={lists} />
+        <ShowLists lists={lists.filter((list) => !list.sort.includes("🍭"))} />
       </div>
     </section>
   );

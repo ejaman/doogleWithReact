@@ -39,6 +39,10 @@ const AddList = (props) => {
         name="type"
         placeholder="Type / Feature"
       ></input>
+      <span className={styles.btnArea}>
+        <button className={styles.btns}>img</button>
+        <button className={styles.btns}>add</button>
+      </span>
     </form>
   );
 };

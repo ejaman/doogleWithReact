@@ -1,13 +1,25 @@
 .list {
   /* background-color: gray; */
+  display: flex;
+  width: 33em;
+}
+.td {
+  width: 100%;
+
+  display: flex;
+  margin: 0.5em;
 }
 .img {
-  width: 7em;
+  width: 10em;
+}
+.container {
+  margin: 1em 2em;
 }
 .input {
+  width: 100%;
   font-size: 1rem;
-  padding: 0.3rem;
-  border: none;
+  padding: 0.5em;
   outline: none;
-  border-radius: 15px;
+  border: none;
+  border-bottom: #e3e3e4 1px solid;
 }
