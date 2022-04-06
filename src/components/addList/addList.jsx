@@ -5,15 +5,15 @@ const AddList = (props) => {
   return (
     <form className={styles.form}>
       <span>
-        <img className={styles.logo} src="./images/doogle.png" alt="logo"></img>
+        {/* <img className={styles.logo} src="./images/doogle.png" alt="logo"></img> */}
         <p className={styles.title}> 리스트를 추가해주세요.</p>
       </span>
 
       <p className={styles.p}>카테고리</p>
       <select className={styles.sort} name="theme">
-        <option value="Plant">🌳 plant</option>
-        <option value="Flower">🌼 flower</option>
-        <option value="Food">🍭 food</option>
+        <option value="🌳">🌳 plant</option>
+        <option value="🌼">🌼 flower</option>
+        <option value="🍭">🍭 food</option>
       </select>
       <p className={styles.p}>이름</p>
       <input

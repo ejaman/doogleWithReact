@@ -1,0 +1,14 @@
+.footer {
+  background-color: #f2f2f2;
+
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  z-index: -1;
+}
+.info {
+  padding: 1em 2em;
+  font-size: 0.9em;
+  color: #505050;
+  border-bottom: 1px solid #cfcfcf;
+}

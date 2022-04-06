@@ -1,5 +1,5 @@
 .doogle {
-  margin-top: 6em;
+  margin-top: 7em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,13 +17,15 @@
   font-size: 1.1em;
   outline: none;
   border-radius: 25px;
-  border: #e3e3e4 1px solid;
+  border: #d6d6d6 1px solid;
+}
+.searchBar:hover {
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
 }
 .showlist {
-  margin-left: 2em;
-  margin-top: 5em;
-  padding: 1em 2em;
+  margin: 3em 0 3em 2em;
+  padding: 1em;
+  background-color: white;
   border: #e3e3e4 2px solid;
   border-radius: 8px;
   height: 20em;
@@ -32,33 +34,29 @@
 .addlist {
   width: 100%;
   position: absolute;
-  left: 64%;
+  left: 61%;
 }
 
 .btns {
   display: flex;
+  margin-top: 0.5em;
 }
-.btnSection {
-  border-radius: 7px;
-  padding: 1em 1.8em 0.3em;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.btnSection:hover {
-  background-color: #ebebeb;
-}
-.btnSection p {
-  font-size: 0.8em;
-}
-.showBtn,
-.plantBtn,
-.foodBtn,
-.addBtn {
-  border-radius: 50%;
+.btn {
+  width: 9em;
+  margin: 0.3em;
+  padding: 0.5em 1em;
+  font-size: 0.95em;
   border: none;
-  background: #f3f3f3;
-  padding: 0.3em;
-  width: 2em;
-  font-size: 1.5em;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+}
+.btn:hover {
+  border: 1px solid #dcdddd;
+}
+
+.notion {
+  font-size: 0.8em;
+  margin-top: 2em;
 }

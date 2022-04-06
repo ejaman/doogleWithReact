@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import AddList from "../addList/addList";
-import Header from "../header/header";
+import Footer from "../footer/footer";
 import List from "../list/list";
-import ListBtn from "../listBtn/listBtn";
 import ShowLists from "../showLists/showLists";
 import styles from "./doogle.module.css";
 
 const Doogle = (props) => {
-  const [open, setOpen] = useState(false);
+  const [add, setAdd] = useState(false);
+  const [list, setList] = useState(false);
   const [lists, setLists] = useState([
     {
       id: 1,
@@ -35,8 +35,11 @@ const Doogle = (props) => {
     },
   ]);
 
-  const onClickOpen = (event) => {
-    setOpen((prevStatus) => (prevStatus ? false : true));
+  const onClickAddOpen = (event) => {
+    setAdd((prevStatus) => (prevStatus ? false : true));
+  };
+  const onClickListOpen = (event) => {
+    setList((prevStatus) => (prevStatus ? false : true));
   };
 
   return (
@@ -50,38 +53,29 @@ const Doogle = (props) => {
       </form>
 
       {/* 버튼 부분 */}
-      <div className={styles.btns}>
-        <div className={styles.btnSection}>
-          <button className={styles.showBtn}>⚠️</button>
-          <p>All</p>
-        </div>
-        <div className={styles.btnSection}>
-          <button className={styles.plantBtn}>🌳</button>
-          <p>Plants</p>
-        </div>
-        <div className={styles.btnSection}>
-          <button className={styles.foodBtn}>🍭</button>
-          <p>Foods</p>
-        </div>
-        <div className={styles.btnSection}>
-          <button className={styles.addBtn} onClick={onClickOpen}>
-            ➕
-          </button>
-          <p>Add</p>
-        </div>
-      </div>
+      <section className={styles.btns}>
+        <button className={styles.btn} onClick={onClickListOpen}>
+          Show List 📝
+        </button>
+        <button className={styles.btn} onClick={onClickAddOpen}>
+          Add List➕
+        </button>
+      </section>
+      <span className={styles.notion}> Doogle offered in: 한국어, English</span>
 
       {/* 리스트 추가 */}
-      {open ? (
+      {add ? (
         <div className={styles.addlist}>
           <AddList />
         </div>
       ) : null}
 
       {/* 리스트 또는 검색 결과가 보여지는 부분 */}
-      <div className={styles.showlist}>
-        <ShowLists lists={lists.filter((list) => !list.sort.includes("🍭"))} />
-      </div>
+      {list ? (
+        <div className={styles.showlist}>
+          <ShowLists lists={lists} />
+        </div>
+      ) : null}
     </section>
   );
 };
