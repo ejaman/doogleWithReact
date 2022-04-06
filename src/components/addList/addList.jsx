@@ -5,7 +5,6 @@ const AddList = (props) => {
   return (
     <form className={styles.form}>
       <span>
-        {/* <img className={styles.logo} src="./images/doogle.png" alt="logo"></img> */}
         <p className={styles.title}> 리스트를 추가해주세요.</p>
       </span>
 
