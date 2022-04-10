@@ -43,10 +43,8 @@ const Doogle = (props) => {
       <a href="https://github.com/ejaman/doogleWithReact">
         <img className={styles.logo} src="./images/doogle.png" alt="logo"></img>
       </a>
-
       {/* 검색부분 */}
       <Search />
-
       {/* 버튼 부분 */}
       <section className={styles.btns}>
         <Link className={styles.btn} to="/search">

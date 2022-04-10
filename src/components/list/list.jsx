@@ -8,42 +8,27 @@ const List = ({ list }) => {
 
   return (
     <li className={`${styles.list} ${getSort(sort)}`}>
-      <div className={styles.td}>
-        <div className={styles.image}>
-          <img className={styles.img} src={url} alt="img"></img>
+      <div className={styles.image}>
+        <img className={styles.img} src={url} alt="img"></img>
+      </div>
+      <div className={styles.container}>
+        <div className={styles.names}>
+          <input className={styles.kor} type="text" name="name" value={name} />
+          <input className={styles.eng} type="text" name="eng" value={eng} />
         </div>
-        <div className={styles.container}>
-          <input
-            className={styles.input}
-            type="text"
-            name="sort"
-            value={sort}
-          />
-          <input
-            className={styles.input}
-            type="text"
-            name="name"
-            value={name}
-          />
-          <input className={styles.input} type="text" name="eng" value={eng} />
-          <input
-            className={styles.input}
-            type="text"
-            name="type"
-            value={type}
-          />
-        </div>
+        <input className={styles.type} type="text" name="type" value={type} />
+        <input className={styles.sort} type="text" name="sort" value={sort} />
       </div>
     </li>
   );
 };
 function getSort(sort) {
   switch (sort) {
-    case "🌼":
+    case "🌼 Flower":
       return styles.flower;
-    case "🌳":
+    case "🌳 Plant":
       return styles.tree;
-    case "🍭":
+    case "🍭 Food":
       return styles.food;
     default:
       throw new Error("unknown type: ${sort}");

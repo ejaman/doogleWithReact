@@ -10,7 +10,6 @@ const ShowLists = ({ lists }) => {
 
   return (
     <section className={styles.lists}>
-      <p className={styles.title}>From your Doogle list</p>
       <div className={styles.btns}>
         <button className={styles.btn} value="🌳" onClick={onBtnClick}>
           Plant
@@ -25,13 +24,18 @@ const ShowLists = ({ lists }) => {
           All
         </button>
       </div>
-      <table className={styles.table}>
-        {lists
-          .filter((list) => list.sort.includes(`${icon}`))
-          .map((list) => (
-            <List list={list} />
-          ))}
-      </table>
+
+      <div className={styles.result}>
+        <span className={styles.total}>About 1,120,903 result</span>
+        {/* 결과가 산출될 공간 */}
+        <table className={styles.table}>
+          {lists
+            .filter((list) => list.sort.includes(`${icon}`))
+            .map((list) => (
+              <List list={list} />
+            ))}
+        </table>
+      </div>
     </section>
   );
 };

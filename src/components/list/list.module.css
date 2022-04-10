@@ -1,25 +1,46 @@
 .list {
-  /* background-color: gray; */
+  border-top: 1px solid #dcdddd;
   display: flex;
-  width: 33em;
-}
-.td {
+  padding: 0.6em 0;
   width: 100%;
+  align-items: center;
+}
 
+.container {
+  width: 100%;
+  padding: 1em;
   display: flex;
-  margin: 0.5em;
+}
+.names {
+  width: 50%;
+  padding: 0;
 }
 .img {
-  width: 10em;
+  width: 3em;
+  border-radius: 50%;
+  border: 2px solid #dcdddd;
 }
-.container {
-  margin: 1em 2em;
-}
-.input {
-  width: 100%;
-  font-size: 1rem;
-  padding: 0.5em;
-  outline: none;
+
+.kor,
+.eng,
+.type,
+.sort {
+  font-weight: 600;
+  font-size: 0.9em;
+  padding: 0.4em;
   border: none;
-  border-bottom: #e3e3e4 1px solid;
+  outline: none;
+}
+.eng {
+  width: 100%;
+  color: #8f8f8f;
+}
+.type {
+  font-weight: 400;
+  width: 90%;
+  text-align: center;
+}
+.sort {
+  width: 90%;
+  text-align: center;
 }

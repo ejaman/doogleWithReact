@@ -6,6 +6,7 @@
 }
 .logo {
   width: 17rem;
+  margin: 2.5em 0;
 }
 
 .showlist {
@@ -25,7 +26,7 @@
 
 .btns {
   display: flex;
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 .btn {
   width: 9em;
@@ -51,4 +52,5 @@
 .notion {
   font-size: 0.8em;
   margin-top: 2em;
+  padding-bottom: 14.9em;
 }

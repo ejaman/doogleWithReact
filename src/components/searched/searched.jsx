@@ -7,7 +7,7 @@ const Searched = (props) => {
   const [lists, setLists] = useState([
     {
       id: 1,
-      sort: "🌼",
+      sort: "🌼 Flower",
       name: "브룬펠시아",
       type: "가지과",
       eng: "Brunfelsia species",
@@ -15,7 +15,7 @@ const Searched = (props) => {
     },
     {
       id: 2,
-      sort: "🌼",
+      sort: "🌼 Flower",
       name: "데이지",
       type: "국화과",
       eng: "Chrysanthemum species",
@@ -23,10 +23,18 @@ const Searched = (props) => {
     },
     {
       id: 3,
-      sort: "🌳",
+      sort: "🌳 Plant",
       name: "염자",
       type: "다육식물",
       eng: "Crassula arborescens",
+      fileURL: null,
+    },
+    {
+      id: 4,
+      sort: "🍭 Food",
+      name: "양파",
+      type: "채소",
+      eng: "Onion",
       fileURL: null,
     },
   ]);
@@ -40,10 +48,15 @@ const Searched = (props) => {
             alt="logo"
           ></img>
         </a>
-        <Search />
+        {/* 서치 바 */}
+        <div className={styles.search}>
+          <Search />
+        </div>
       </header>
 
-      <ShowLists lists={lists} />
+      <div className={styles.list}>
+        <ShowLists lists={lists} />
+      </div>
     </section>
   );
 };
