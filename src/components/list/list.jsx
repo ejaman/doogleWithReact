@@ -22,6 +22,7 @@ const List = ({ list }) => {
     </li>
   );
 };
+
 function getSort(sort) {
   switch (sort) {
     case "🌼 Flower":

@@ -26,7 +26,7 @@ const ShowLists = ({ lists }) => {
       </div>
 
       <div className={styles.result}>
-        <span className={styles.total}>About 1,120,903 result</span>
+        <span className={styles.total}>About {lists.length} result</span>
         {/* 결과가 산출될 공간 */}
         <table className={styles.table}>
           {lists

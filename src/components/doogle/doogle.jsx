@@ -10,7 +10,7 @@ const Doogle = (props) => {
   const [lists, setLists] = useState([
     {
       id: 1,
-      sort: "🌼",
+      sort: "🌼 Flower",
       name: "브룬펠시아",
       type: "가지과",
       eng: "Brunfelsia species",
@@ -18,7 +18,7 @@ const Doogle = (props) => {
     },
     {
       id: 2,
-      sort: "🌼",
+      sort: "🌼 Flower",
       name: "데이지",
       type: "국화과",
       eng: "Chrysanthemum species",
@@ -26,10 +26,26 @@ const Doogle = (props) => {
     },
     {
       id: 3,
-      sort: "🌳",
+      sort: "🌳 Plant",
       name: "염자",
       type: "다육식물",
       eng: "Crassula arborescens",
+      fileURL: null,
+    },
+    {
+      id: 4,
+      sort: "🍭 Food",
+      name: "양파",
+      type: "채소",
+      eng: "Onion",
+      fileURL: null,
+    },
+    {
+      id: 5,
+      sort: "🍭 Food",
+      name: "파",
+      type: "채소",
+      eng: "Spring Onion",
       fileURL: null,
     },
   ]);
@@ -44,7 +60,7 @@ const Doogle = (props) => {
         <img className={styles.logo} src="./images/doogle.png" alt="logo"></img>
       </a>
       {/* 검색부분 */}
-      <Search />
+      <Search lists={lists} />
       {/* 버튼 부분 */}
       <section className={styles.btns}>
         <Link className={styles.btn} to="/search">

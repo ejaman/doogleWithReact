@@ -37,6 +37,14 @@ const Searched = (props) => {
       eng: "Onion",
       fileURL: null,
     },
+    {
+      id: 5,
+      sort: "🍭 Food",
+      name: "파",
+      type: "채소",
+      eng: "Spring Onion",
+      fileURL: null,
+    },
   ]);
   return (
     <section className={styles.searched}>
@@ -48,9 +56,8 @@ const Searched = (props) => {
             alt="logo"
           ></img>
         </a>
-        {/* 서치 바 */}
         <div className={styles.search}>
-          <Search />
+          <Search lists={lists} />
         </div>
       </header>
 
