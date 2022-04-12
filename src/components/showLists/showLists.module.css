@@ -21,7 +21,8 @@
   border-bottom: #1b72e8 3px solid;
 }
 .result {
-  margin: 1em 0 0 10.5em;
+  margin: 0em 0 0 10.5em;
+  display: flex;
 }
 .total {
   color: #505050;

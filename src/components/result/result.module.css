@@ -1,0 +1,55 @@
+.result {
+  width: 45%;
+  padding: 1em 0;
+}
+.total {
+  color: #505050;
+  font-weight: 500;
+}
+
+.list {
+  border-top: 1px solid #dcdddd;
+  display: flex;
+  padding: 0.6em 0;
+  width: 100%;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+}
+.names {
+  width: 50%;
+  padding: 0;
+}
+.img {
+  width: 5em;
+  border-radius: 10px;
+  border: 2px solid #dcdddd;
+}
+
+.kor,
+.eng,
+.type,
+.sort {
+  font-weight: 600;
+  font-size: 0.9em;
+  padding: 0.4em;
+  border: none;
+  outline: none;
+}
+.eng {
+  width: 100%;
+  color: #8f8f8f;
+}
+.type {
+  font-weight: 400;
+  width: 90%;
+  text-align: center;
+}
+.sort {
+  width: 90%;
+  text-align: center;
+}

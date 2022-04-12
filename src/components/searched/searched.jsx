@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useLocation } from "react-router";
+import Result from "../result/result";
 import Search from "../search/search";
 import ShowLists from "../showLists/showLists";
 import styles from "./searched.module.css";
 
 const Searched = (props) => {
+  const { state } = useLocation();
+  const { word } = state;
+  const [Term, setTerm] = useState("");
+  const formRef = useRef();
+  const TermRef = useRef();
+
   const [lists, setLists] = useState([
     {
       id: 1,
@@ -46,6 +54,12 @@ const Searched = (props) => {
       fileURL: null,
     },
   ]);
+  const onSearchClick = (event) => {
+    event.preventDefault();
+    console.log(TermRef.current.value);
+    setTerm(TermRef.current.value);
+    formRef.current.reset();
+  };
   return (
     <section className={styles.searched}>
       <header className={styles.header}>
@@ -56,13 +70,24 @@ const Searched = (props) => {
             alt="logo"
           ></img>
         </a>
-        <div className={styles.search}>
-          <Search lists={lists} />
+        <div className={styles.searchBar}>
+          <form className={styles.search} ref={formRef}>
+            <span>🔍</span>
+            <input className={styles.searchBar} ref={TermRef} type="text" />
+            <button className={styles.submit} onClick={onSearchClick}></button>
+          </form>
+          {/* <Search lists={lists} /> */}
         </div>
       </header>
 
       <div className={styles.list}>
-        <ShowLists lists={lists} />
+        {/* 결과가 나오는 곳 */}
+        {Term !== "" ? (
+          <ShowLists lists={lists} word={Term} />
+        ) : (
+          <ShowLists lists={lists} word={word} />
+        )}
+        {/* <ShowLists lists={lists} /> */}
       </div>
     </section>
   );

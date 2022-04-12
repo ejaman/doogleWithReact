@@ -4,12 +4,12 @@ import styles from "./search.module.css";
 
 const Search = ({ lists }) => {
   const formRef = useRef();
-  const [searchWord, setSearchWord] = useState();
 
   const searchRef = useRef();
   const onSubmit = (event) => {
     event.preventDefault();
-    setSearchWord(searchRef.current.value);
+    console.log(searchRef.current.value);
+
     formRef.current.reset();
   };
   return (
@@ -17,9 +17,6 @@ const Search = ({ lists }) => {
       <span>🔍</span>
       <input className={styles.searchBar} ref={searchRef} type="text" />
       <button className={styles.submit} onClick={onSubmit}></button>
-      <div>
-        <Result lists={lists} word={searchWord} />
-      </div>
     </form>
   );
 };

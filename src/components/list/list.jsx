@@ -11,14 +11,13 @@ const List = ({ list }) => {
       <div className={styles.image}>
         <img className={styles.img} src={url} alt="img"></img>
       </div>
-      <div className={styles.container}>
-        <div className={styles.names}>
-          <input className={styles.kor} type="text" name="name" value={name} />
-          <input className={styles.eng} type="text" name="eng" value={eng} />
-        </div>
-        <input className={styles.type} type="text" name="type" value={type} />
-        <input className={styles.sort} type="text" name="sort" value={sort} />
+
+      <div className={styles.names}>
+        <div className={styles.kor}>{name}</div>
+        <div className={styles.eng}>{eng}</div>
       </div>
+      <div className={styles.type}>{type}</div>
+      <div className={styles.sort}> {sort} </div>
     </li>
   );
 };

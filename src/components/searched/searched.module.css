@@ -9,5 +9,24 @@
 .list {
   width: 100%;
 }
+
 .search {
+  width: 35em;
+  border-radius: 25px;
+  border: #d6d6d6 1px solid;
+  padding: 0 1em;
+}
+.searchBar {
+  width: 88%;
+  padding: 0.7em 1em;
+  font-size: 1.1em;
+  outline: none;
+  border: none;
+}
+.search:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+.submit {
+  background: none;
+  border: none;
 }

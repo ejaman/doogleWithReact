@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router";
 import AddList from "../addList/addList";
 import Search from "../search/search";
 import styles from "./doogle.module.css";
 
 const Doogle = (props) => {
   const [add, setAdd] = useState(false);
+  const navigate = useNavigate();
+  const formRef = useRef();
+  const searchRef = useRef();
 
   const [lists, setLists] = useState([
     {
@@ -49,6 +52,9 @@ const Doogle = (props) => {
       fileURL: null,
     },
   ]);
+  const goToSearched = () => {
+    navigate("/search", { state: { word: searchRef.current.value } });
+  };
 
   const onClickAddOpen = (event) => {
     setAdd((prevStatus) => (prevStatus ? false : true));
@@ -60,12 +66,20 @@ const Doogle = (props) => {
         <img className={styles.logo} src="./images/doogle.png" alt="logo"></img>
       </a>
       {/* 검색부분 */}
-      <Search lists={lists} />
+
+      <form className={styles.search} ref={formRef}>
+        <span>🔍</span>
+        <input className={styles.searchBar} ref={searchRef} type="text" />
+        <button className={styles.submit} onClick={goToSearched}></button>
+      </form>
+
+      {/* <Search lists={lists} /> */}
       {/* 버튼 부분 */}
       <section className={styles.btns}>
-        <Link className={styles.btn} to="/search">
-          <button className={styles.listBtn}>Show List 📝</button>
-        </Link>
+        <button className={styles.listBtn} onClick={goToSearched}>
+          Show List 📝
+        </button>
+
         <button className={styles.btn} onClick={onClickAddOpen}>
           Add List➕
         </button>
